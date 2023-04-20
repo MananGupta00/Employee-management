@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Employee Form</title>
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        
+
+    </head>
+    <body>
+
+      <div>
+      
+       
+      </div>
+      
+      <div>
+        <h1>Search places</h1>
+          <div id = "out"></div>
+       <div id = "out2"></div>
+      </div>
+      <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+    <script>
+    
+       $.get("ListStates",()=>{}).done(
+    		   function( data ) {
+ 		          document.getElementById("out").innerHTML= data;
+ 		          console.log(data)
+ 		          
+ 		         document.getElementById("state").addEventListener('change',
+ 		        		$.get( "ListCities", { 
+ 	        				state: document.getElementById("state").value,
+ 	        			}).done(function( data ) {
+ 	        				document.getElementById("out2").innerHTML= data;
+ 	        	        }));
+    		   })
+       
+
+        			
+
+    </script>
+    </body>
+</html>
